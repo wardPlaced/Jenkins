@@ -36,7 +36,7 @@ class MultibranchPipelineJobBuilder extends JobBuilder {
 
         job.triggers {
             // Scan at most once per day
-            cron(@daily)
+            cron('* 23 * * *')
         }
 
         job.configure {
