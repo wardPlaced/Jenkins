@@ -1,4 +1,4 @@
-import javaposse.jobdsl.dsl.DslFactory
+//import javaposse.jobdsl.dsl.DslFactory
 
 /**
  * Provides convenience DSL elements with Pocketcode specific behavior.
@@ -12,7 +12,7 @@ import javaposse.jobdsl.dsl.DslFactory
  */
 class JobBuilder extends Delegator {
     protected def job
-    protected DslFactory dslFactory
+    //protected DslFactory dslFactory
     protected def projectData
 
     /**
@@ -22,8 +22,9 @@ class JobBuilder extends Delegator {
      * @param projectData ProjectData is an object that contains common information of a project, like its git-repository.
      *             Some methods rely directly on fields of projectData as default values.
      */
-    JobBuilder(def job, DslFactory dslFactory, def projectData=null) {
-        super(job)
+     // def job, DslFactory dslFactory, def projectData=null
+    JobBuilder() {
+        //super(job)
         this.job = job
         this.dslFactory = dslFactory
         this.projectData = projectData

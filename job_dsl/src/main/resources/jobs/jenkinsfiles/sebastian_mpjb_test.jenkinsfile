@@ -1,0 +1,15 @@
+#!groovy
+
+node {
+    stage('Checkout') {
+        git url: 'https://github.com/wardPlaced/Jenkins', branch: 'master'
+    }
+
+    stage('Build') {
+        sh ""
+    }
+
+    stage('Archive Artifacts'){
+        archiveArtifacts 'job_dsl/src/main/resources/jobs/jenkinsfiles/sebastian_mpjb_test.jenkinsfile'
+    }
+}
