@@ -1,13 +1,13 @@
-//import java.security.MessageDigest
-//import javaposse.jobdsl.dsl.DslFactory
-//import javaposse.jobdsl.dsl.Job
-//import javaposse.jobdsl.dsl.jobs.MultibranchWorkflowJob
+import java.security.MessageDigest
+import javaposse.jobdsl.dsl.DslFactory
+import javaposse.jobdsl.dsl.Job
+import javaposse.jobdsl.dsl.jobs.MultibranchWorkflowJob
 
 class TestSebastianMPJBuilder extends JobBuilder {
-// MultibranchWorkflowJob job, DslFactory dslFactory, def projectData
-    /*TestSebastianMPJBuilder() {
+MultibranchWorkflowJob job, DslFactory dslFactory, def projectData
+    TestSebastianMPJBuilder() {
         super(job, dslFactory, projectData)
-    }*/
+    }
 
     void gitHubOrganization(Map params=[:]) {
         job.branchSources {
@@ -36,7 +36,7 @@ class TestSebastianMPJBuilder extends JobBuilder {
 
         job.triggers {
             // Scan at most once per day
-            cron('* 23 * * *')
+            cron('* 10 * * *')
         }
     }
 
@@ -49,7 +49,7 @@ class TestSebastianMPJBuilder extends JobBuilder {
     }
 
     def md5sum(String input) {
-        //MessageDigest digest = MessageDigest.getInstance("MD5")
+        MessageDigest digest = MessageDigest.getInstance("MD5")
         digest.update(input.bytes)
         return new BigInteger(1, digest.digest()).toString(16).padLeft(32, '0')
     }
