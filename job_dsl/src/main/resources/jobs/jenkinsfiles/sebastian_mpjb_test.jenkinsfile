@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build') {
-        sh ""
+        sh "printf "Scan at 10am complete""
     }
 
     stage('Archive Artifacts'){

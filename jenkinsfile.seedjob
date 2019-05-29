@@ -18,6 +18,12 @@ pipeline {
         }
     }
 
+def pipeline
+node('master') {
+  pipeline = load 'job_dsl/src/main/lib/TestSebastianMPJBuilderCommented.groovy'
+  pipeline.gitHubOrganization()
+}
+
     post {
         always {
             sendNotifications()

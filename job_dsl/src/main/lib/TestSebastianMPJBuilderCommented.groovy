@@ -9,7 +9,7 @@ class TestSebastianMPJBuilder extends JobBuilder {
         super(job, dslFactory, projectData)
     }*/
 
-    void gitHubOrganization(Map params=[:]) {
+    void gitHubOrganization() {
         job.branchSources {
             branchSource {
                 source {
